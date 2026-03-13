@@ -3,7 +3,7 @@
 # Alpine-Maintainer: Peter Shkenev <santurysim@gmail.com>
 pkgname=python3-wheel
 pkgver=0.46.1
-pkgrel=1
+pkgrel=${pkgrel:-0}
 pkgdesc="built-package format for Python"
 url="https://github.com/pypa/wheel"
 arch="noarch"
@@ -42,6 +42,7 @@ package() {
 }
 
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 69219fb100d47da42999e0d0e4a023ac43489eb7f1755cb08f6d72a26bda1d435b3a9738340379b1a7f0054330711c7ca9865736cb0463a3f49004c25b61ebfe  wheel-0.46.1.tar.gz
 "
